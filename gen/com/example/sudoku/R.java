@@ -27,25 +27,28 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090005;
-        public static final int button1=0x7f090001;
-        public static final int button2=0x7f090002;
-        public static final int button3=0x7f090003;
-        public static final int button4=0x7f090004;
-        public static final int textView1=0x7f090000;
+        public static final int about_content=0x7f090000;
+        public static final int action_settings=0x7f090006;
+        public static final int button1=0x7f090002;
+        public static final int button2=0x7f090003;
+        public static final int button3=0x7f090004;
+        public static final int button4=0x7f090005;
+        public static final int textView1=0x7f090001;
     }
     public static final class layout {
-        public static final int activity_sudoku=0x7f030000;
+        public static final int about=0x7f030000;
+        public static final int activity_sudoku=0x7f030001;
     }
     public static final class menu {
         public static final int sudoku=0x7f080000;
     }
     public static final class string {
+        public static final int about_label=0x7f050006;
+        public static final int about_text=0x7f050008;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int continue_label=0x7f050003;
         public static final int hello_world=0x7f050002;
-        public static final int highscore_label=0x7f050006;
         public static final int name_of_the_game=0x7f050007;
         public static final int new_game_label=0x7f050004;
         public static final int quit_label=0x7f050005;
