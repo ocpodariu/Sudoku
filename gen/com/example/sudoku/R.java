@@ -45,7 +45,8 @@ public final class R {
     }
     public static final class string {
         public static final int about_label=0x7f050006;
-        public static final int about_text=0x7f050008;
+        public static final int about_text=0x7f050009;
+        public static final int about_title=0x7f050008;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int continue_label=0x7f050003;
