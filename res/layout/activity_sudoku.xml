@@ -2,6 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:padding="30dip"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -16,28 +17,36 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:text="@string/name_of_the_game"
+            android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
             android:id="@+id/button1"
+            android:background="@color/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
             android:text="@string/continue_label" />
 
         <Button
             android:id="@+id/button2"
+            android:background="@color/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
             android:text="@string/new_game_label" />
 
         <Button
             android:id="@+id/button3"
+            android:background="@color/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
             android:text="@string/about_label" />
 
         <Button
             android:id="@+id/button4"
+            android:background="@color/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/quit_label" />
