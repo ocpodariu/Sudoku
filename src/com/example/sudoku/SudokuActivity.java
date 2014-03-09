@@ -52,7 +52,7 @@ public class SudokuActivity extends Activity {
 		mQuitButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				finish();
 			}
 		});
 	}
