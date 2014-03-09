@@ -41,8 +41,9 @@
             android:background="@color/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:text="@string/about_label" />
+			android:layout_marginBottom="13dp"
+			android:onClick="aboutOn"
+			android:text="@string/about_label" />
 
         <Button
             android:id="@+id/button4"

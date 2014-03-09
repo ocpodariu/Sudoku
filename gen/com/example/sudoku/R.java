@@ -45,7 +45,8 @@ public final class R {
     }
     public static final class string {
         public static final int about_label=0x7f050006;
-        public static final int about_text=0x7f050008;
+        public static final int about_text=0x7f050009;
+        public static final int about_title=0x7f050008;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int continue_label=0x7f050003;
@@ -77,7 +78,7 @@ public final class R {
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f060000;
-        /**  Application theme. #354f
+        /**  Application theme. #ffa768
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;

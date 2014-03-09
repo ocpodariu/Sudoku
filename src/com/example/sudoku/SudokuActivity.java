@@ -3,13 +3,15 @@ package com.example.sudoku;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
+import android.content.Intent; 
 
 public class SudokuActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_sudoku);
+		setContentView(R.layout.activity_sudoku);		
 	}
 
 	@Override
@@ -18,5 +20,11 @@ public class SudokuActivity extends Activity {
 		getMenuInflater().inflate(R.menu.sudoku, menu);
 		return true;
 	}
+
+	public void aboutOn(View v) { 
+		    Intent i = new Intent(this, About.class);
+			startActivity(i);  
+		}
+		
 
 }
