@@ -27,5 +27,15 @@ public class Game extends Activity{
 		puzzleView.requestFocus();
 	} // ...
 
+	private int[] getPuzzle(int diff) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private void calculateUsedTiles() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
