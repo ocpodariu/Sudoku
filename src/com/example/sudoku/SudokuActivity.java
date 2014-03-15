@@ -69,7 +69,7 @@ public class SudokuActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.settings:
-			startActivity(new Intent(this, Prefs.class));
+			startActivity(new Intent(this, Prefs.class)); 
 			return true;
 		}
 		return false;
@@ -95,6 +95,10 @@ public class SudokuActivity extends Activity {
 	private void startGame(int i) {
 		// TODO: Start a game
 		Log.d("Sudoku", "clicked on " + i);
+		Intent intent = new Intent(SudokuActivity.this, Game.class);
+		//Diff between this and SudokuActivity.this?
+		intent.putExtra(Game.KEY_DIFFICULTY,i);
+		startActivity(intent);
 	}
 		
 

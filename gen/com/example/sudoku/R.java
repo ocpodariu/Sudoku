@@ -16,6 +16,15 @@ public final class R {
     public static final class color {
         public static final int background=0x7f090000;
         public static final int button=0x7f090001;
+        public static final int puzzle_background=0x7f090002;
+        public static final int puzzle_dark=0x7f090005;
+        public static final int puzzle_foreground=0x7f090006;
+        public static final int puzzle_hilite=0x7f090003;
+        public static final int puzzle_hint_0=0x7f090007;
+        public static final int puzzle_hint_1=0x7f090008;
+        public static final int puzzle_hint_2=0x7f090009;
+        public static final int puzzle_light=0x7f090004;
+        public static final int puzzle_selected=0x7f09000a;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -56,15 +65,18 @@ public final class R {
         public static final int app_name=0x7f070000;
         public static final int continue_label=0x7f070002;
         public static final int easy_label=0x7f070011;
+        public static final int game_title=0x7f070014;
         public static final int hard_label=0x7f070013;
         public static final int hints_summary=0x7f07000f;
         public static final int hints_title=0x7f07000e;
+        public static final int keypad_title=0x7f070016;
         public static final int medium_label=0x7f070012;
         public static final int music_summary=0x7f07000d;
         public static final int music_title=0x7f07000c;
         public static final int name_of_the_game=0x7f070006;
         public static final int new_game_label=0x7f070003;
         public static final int new_game_title=0x7f070010;
+        public static final int no_moves_label=0x7f070015;
         public static final int quit_label=0x7f070004;
         public static final int settings_label=0x7f070009;
         public static final int settings_shortcut=0x7f07000b;
