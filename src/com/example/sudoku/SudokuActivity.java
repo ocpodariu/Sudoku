@@ -98,7 +98,7 @@ public class SudokuActivity extends Activity {
 		Intent intent = new Intent(SudokuActivity.this, Game.class);
 		//Diff between this and SudokuActivity.this?
 		intent.putExtra(Game.KEY_DIFFICULTY,i);
-		startActivity(intent);
+        startActivity(intent);
 	}
 		
 

@@ -15,8 +15,7 @@ public class Game extends Activity{
 	private PuzzleView puzzleView;
 	
 	@Override 
-	protected void onCreate(Bundle savedInstanceState) 
-	{ 
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState); 
 		Log.d(TAG, "onCreate");
 		int diff = getIntent().getIntExtra(KEY_DIFFICULTY, DIFFICULTY_EASY);
@@ -25,7 +24,7 @@ public class Game extends Activity{
 		puzzleView = new PuzzleView(this);
 		setContentView(puzzleView);
 		puzzleView.requestFocus();
-	} // ...
+	}
 
 	private int[] getPuzzle(int diff) {
 		// TODO Auto-generated method stub
@@ -36,6 +35,5 @@ public class Game extends Activity{
 		// TODO Auto-generated method stub
 		
 	}
-
 
 }
