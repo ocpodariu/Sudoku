@@ -7,6 +7,7 @@ import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 
 public class PuzzleView extends View{
@@ -107,6 +108,52 @@ public class PuzzleView extends View{
 		Paint selected = new Paint();
 		selected.setColor(getResources().getColor(R.color.puzzle_selected));
 		canvas.drawRect(selRect, selected);
+		
+	}
+	
+	// Calculate the X and Y coordinates of the selection cursor
+	private void select(int x, int y) {
+		
+		// the selection cursor needs to be redrawn
+		invalidate(selRect);
+		
+		// calculate its new coordinates
+		selX = Math.min(Math.max(x, 0), 8);
+		selY = Math.min(Math.max(y, 0), 8);
+		
+		// calculate the new selection rectangle
+		getRect(selX, selY, selRect);
+		
+		// the new area needs to be redrawn
+		invalidate(selRect);
+		
+	}
+	
+	// Add support for devices with D-pad
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
+		switch (keyCode) {
+			case KeyEvent.KEYCODE_DPAD_UP:
+				select(selX, selY - 1);
+				break;
+				
+			case KeyEvent.KEYCODE_DPAD_DOWN:
+				select(selX, selY + 1);
+				break;
+				
+			case KeyEvent.KEYCODE_DPAD_RIGHT:
+				select(selX + 1, selY);
+				break;
+				
+			case KeyEvent.KEYCODE_DPAD_LEFT:
+				select(selX - 1, selY);
+				break;
+				
+			default:
+				return super.onKeyDown(keyCode, event);
+		}
+		return true;
 		
 	}
 
