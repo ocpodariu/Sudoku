@@ -94,14 +94,20 @@ public class PuzzleView extends View{
 		// Center in Y: measure ascent/descent first
 		float y = height / 2 - (fm.ascent + fm.descent) / 2;
 		
-		for (int i = 0; i < 9; i++) {
+		/*for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				canvas.drawText(this.game.getTileString(i, j),
 						i * width + x,
 						j * height + y,
 						foreground);
 			}
-		}
+		}*/
+		
+		// Draw the selection cursor
+		Paint selected = new Paint();
+		selected.setColor(getResources().getColor(R.color.puzzle_selected));
+		canvas.drawRect(selRect, selected);
+		
 	}
 
 }
