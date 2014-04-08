@@ -8,6 +8,7 @@ import android.graphics.Paint.Style;
 import android.graphics.Rect;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class PuzzleView extends View{
@@ -129,7 +130,24 @@ public class PuzzleView extends View{
 		
 	}
 	
-	// Add support for devices with D-pad
+	// Add support for touch input
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		
+		if (event.getAction() != MotionEvent.ACTION_DOWN)
+			return super.onTouchEvent(event);
+		
+		select((int) (event.getX() / width), (int) (event.getY() / height));
+		
+		game.showKeypadOrError(selX, selY);
+		
+		Log.d(TAG, "onTouchEvent: x " + selX + ", y " + selY);
+		
+		return true;
+		
+	}
+	
+	// Add support for devices with D-pad or keyboard
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		
