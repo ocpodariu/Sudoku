@@ -95,14 +95,14 @@ public class PuzzleView extends View{
 		// Center in Y: measure ascent/descent first
 		float y = height / 2 - (fm.ascent + fm.descent) / 2;
 		
-		/*for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				canvas.drawText(this.game.getTileString(i, j),
 						i * width + x,
 						j * height + y,
 						foreground);
 			}
-		}*/
+		}
 		
 		// Draw the selection cursor
 		Paint selected = new Paint();
@@ -134,27 +134,43 @@ public class PuzzleView extends View{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		
 		switch (keyCode) {
-			case KeyEvent.KEYCODE_DPAD_UP:
-				select(selX, selY - 1);
-				break;
-				
-			case KeyEvent.KEYCODE_DPAD_DOWN:
-				select(selX, selY + 1);
-				break;
-				
-			case KeyEvent.KEYCODE_DPAD_RIGHT:
-				select(selX + 1, selY);
-				break;
-				
-			case KeyEvent.KEYCODE_DPAD_LEFT:
-				select(selX - 1, selY);
-				break;
-				
+			// D-Pad events
+			case KeyEvent.KEYCODE_DPAD_UP:    select(selX, selY - 1); break;				
+			case KeyEvent.KEYCODE_DPAD_DOWN:  select(selX, selY + 1); break;				
+			case KeyEvent.KEYCODE_DPAD_RIGHT: select(selX + 1, selY); break;				
+			case KeyEvent.KEYCODE_DPAD_LEFT:  select(selX - 1, selY); break;
+			
+			// Keyboard events
+			case KeyEvent.KEYCODE_0:     setSelectedTile(0); break;
+			case KeyEvent.KEYCODE_SPACE: setSelectedTile(0); break;
+			case KeyEvent.KEYCODE_1:     setSelectedTile(1); break;
+			case KeyEvent.KEYCODE_2:     setSelectedTile(2); break;
+			case KeyEvent.KEYCODE_3:     setSelectedTile(3); break;
+			case KeyEvent.KEYCODE_4:     setSelectedTile(4); break;
+			case KeyEvent.KEYCODE_5:     setSelectedTile(5); break;
+			case KeyEvent.KEYCODE_6:     setSelectedTile(6); break;
+			case KeyEvent.KEYCODE_7:     setSelectedTile(7); break;
+			case KeyEvent.KEYCODE_8:     setSelectedTile(8); break;
+			case KeyEvent.KEYCODE_9:     setSelectedTile(9); break;
+			case KeyEvent.KEYCODE_ENTER:       game.showKeypadOrError(selX, selY); break;
+			case KeyEvent.KEYCODE_DPAD_CENTER: game.showKeypadOrError(selX, selY); break;
+			
 			default:
 				return super.onKeyDown(keyCode, event);
 		}
 		return true;
 		
+	}
+	
+	// Change the number on a tile
+	public void setSelectedTile(int tile) {
+		if (game.setTileIfValid(selX, selY, tile)) {
+			// the whole screen has to be redrawn
+			invalidate();
+		}
+		else {
+			Log.d(TAG, "setSelectedTile: invalid: " + tile);
+		}
 	}
 
 }
